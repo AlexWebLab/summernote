@@ -54,7 +54,7 @@ const dropdownCheck = renderer.create('<ul class="note-dropdown-menu dropdown-me
     return '<li aria-label="' + item + '"><a href="#" data-value="' + value + '">' + icon(options.checkClassName) + ' ' + content + '</a></li>';
   }).join('') : options.items;
   $node.html(markup).attr({ 'aria-label': options.title });
-  
+
   if (options && options.codeviewKeepButton) {
     $node.addClass('note-codeview-keep');
   }
@@ -109,7 +109,7 @@ const checkbox = renderer.create('<div class="checkbox"></div>', function($node,
 
 const icon = function(iconClassName, tagName) {
   tagName = tagName || 'i';
-  return '<' + tagName + ' class="' + iconClassName + '"/>';
+  return '<' + tagName + ' class="' + iconClassName + '"></' + tagName+'>';
 };
 
 const ui = function(editorOptions) {
