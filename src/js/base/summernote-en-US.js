@@ -43,7 +43,6 @@ $.extend($.summernote.lang, {
       original: 'Original',
       title: 'Title',
       alt: 'Alt',
-      caption: 'Caption',
       class: 'Class',
     },
     video: {
@@ -57,6 +56,9 @@ $.extend($.summernote.lang, {
       controls: 'Show player controls',
       autoplay: 'Autoplay',
       loop: 'Loop',
+      aspect: 'Aspect Ratio',
+      captions: 'Show Captions',
+      quality: 'Video Quality',
     },
     link: {
       link: 'Link',

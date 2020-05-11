@@ -54,7 +54,7 @@ const dropdownCheck = renderer.create('<ul class="note-dropdown-menu dropdown-me
     return '<li aria-label="' + item + '"><a href="#" data-value="' + value + '">' + icon(options.checkClassName) + ' ' + content + '</a></li>';
   }).join('') : options.items;
   $node.html(markup).attr({ 'aria-label': options.title });
-  
+
   if (options && options.codeviewKeepButton) {
     $node.addClass('note-codeview-keep');
   }
@@ -96,10 +96,13 @@ const popover = renderer.create([
   }
 });
 
+// The Layout of using Input inside Label is semantically incorrect, but Bootstrap 3
+// has styled the positioning to work this way.
+// https://getbootstrap.com/docs/3.4/css/#checkboxes-and-radios
 const checkbox = renderer.create('<div class="checkbox"></div>', function($node, options) {
   $node.html([
-    '<label' + (options.id ? ' for="note-' + options.id + '"' : '') + '>',
-      '<input type="checkbox"' + (options.id ? ' id="note-' + options.id + '"' : ''),
+    '<label' + (options.for ? ' for="' + options.for + '"' : '') + '>',
+      '<input type="checkbox"' + (options.for ? ' id="' + options.for + '"' : ''),
         (options.checked ? ' checked' : ''),
         ' aria-checked="' + (options.checked ? 'true' : 'false') + '"/>',
       (options.text ? options.text : ''),

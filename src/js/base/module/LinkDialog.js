@@ -52,12 +52,14 @@ export default class LinkDialog {
       '</div>',
       !this.options.disableLinkTarget
         ? $('<div/>').append(this.ui.checkbox({
+          for: 'note-dialog-link-new-window-' + this.options.id,
           className: 'sn-checkbox-open-in-new-window',
           text: this.lang.link.openInNewWindow,
           checked: true,
         }).render()).html()
         : '',
       $('<div/>').append(this.ui.checkbox({
+        for: 'note-dialog-link-use-protocol-' + this.options.id,
         className: 'sn-checkbox-use-protocol',
         text: this.lang.link.useProtocol,
         checked: true,
